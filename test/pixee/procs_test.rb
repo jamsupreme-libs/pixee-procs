@@ -7,10 +7,10 @@ class Pixee::ProcsTest < Minitest::Test
 
   def test_it_does_something_useful
     # Some simple procs to verify basic behavior
-    inc = ->(n, increment_by = 1) {
+    inc = lambda { |n, increment_by = 1|
       n + increment_by
     }
-    val = ->(v) {
+    val = lambda { |v|
       v
     }
 

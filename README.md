@@ -1,8 +1,23 @@
 # Pixee::Procs
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/pixee/procs`. To experiment with that code, run `bin/console` for an interactive prompt.
+Currently just has helper methods `*` and `>>` for easily chaining procs.
 
-TODO: Delete this and the text above, and describe your gem
+I may add more stuff.
+
+## TODOs
+
+- Static analysis and code quality of some sort
+- Use somewhere to make sure it's reasonable
+- See if native Ruby curry is useful
+- At some point make the global mixin optional (default to `Pixie::Proc.new(proc)` rather than extend `Proc` itself, but still allow a `require 'pixie/procs/global'` to allow the mixin)
+
+## Rubocop
+
+`bundle exec rubocop -ac .rubocop.yml`
+
+## Instructions and such
+
+To experiment with code, run `bin/console` for an interactive prompt.
 
 ## Installation
 
