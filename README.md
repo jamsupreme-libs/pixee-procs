@@ -13,7 +13,7 @@ I may add more stuff.
 
 ## Rubocop
 
-`bundle exec rubocop -ac .rubocop.yml`
+`bundle exec rubocop -a`
 
 ## Instructions and such
 
