@@ -2,17 +2,17 @@
 class Proc
   # Pipes the result of the current proc into the next proc
   def >>(next_proc)
-    ->(*args) {
-      result = self.call(*args)
+    lambda { |*args|
+      result = call(*args)
       next_proc.call(result)
     }
   end
 
   # Acts as a "map" function for the results of the current proc
   def *(next_proc)
-    ->(*args) {
-      result = self.call(*args)
-      result.map {|r| next_proc.call(r)}
+    lambda { |*args|
+      result = call(*args)
+      result.map { |r| next_proc.call(r) }
     }
   end
 
@@ -21,15 +21,15 @@ class Proc
   # You do not need to prepare if your proc takes no arguments aside
   # from the output of the prior proc
   def prepare(*args)
-    ->(*proc_args) {
+    lambda { |*proc_args|
       proc_args += args
-      self.call(*proc_args)
+      call(*proc_args)
     }
   end
 
   # prep to save a few characters
-  alias_method :prep, :prepare
+  alias prep prepare
   # pix since maybe a nonsense word is easier to avoid overlap
   # with other concepts
-  alias_method :pix, :prepare
+  alias pix prepare
 end

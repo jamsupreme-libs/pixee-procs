@@ -1,0 +1,4 @@
+Naming/BinaryOperatorParameterName:
+  Enabled: false
+Style/ClassAndModuleChildren:
+  Enabled: false
