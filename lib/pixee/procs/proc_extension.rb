@@ -10,7 +10,7 @@ class Proc
 
   # Acts as a "map" function for the results of the current proc
   def *(next_proc)
-    lambda { |*args|
+    ->(*args){
       result = call(*args)
       result.map { |r| next_proc.call(r) }
     }
